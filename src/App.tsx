@@ -18,7 +18,9 @@ export type FilterType = {
 };
 
 export default function App() {
-  const [products, setProducts] = useState(data);
+  // const [products, setProducts] = useState(data);
+
+  const products = data;
 
   const [filter, setFilter] = useState<FilterType>({
     search: "",
