@@ -19,7 +19,9 @@ export default function Recommended({ setFilteredProducts }: Params) {
               return { ...prev, companyName: "All" };
             })
           }
-          className=""
+          className={`${
+            selectedName === "All" ? "button-selected" : "button-not-selected"
+          }`}
         >
           All Products
         </button>
@@ -34,7 +36,9 @@ export default function Recommended({ setFilteredProducts }: Params) {
             })
           }
           className={`${
-            selectedName === "Sigma Fit" ? "border-2" : "border-0"
+            selectedName === "Sigma Fit"
+              ? "button-selected"
+              : "button-not-selected"
           }`}
         >
           Sigma Fit
@@ -48,7 +52,9 @@ export default function Recommended({ setFilteredProducts }: Params) {
             })
           }
           className={`${
-            selectedName === "Magma Sportswear" ? "border-2 " : "border-0"
+            selectedName === "Magma Sportswear"
+              ? "button-selected"
+              : "button-not-selected"
           }`}
         >
           Magma Sportswear
@@ -62,7 +68,9 @@ export default function Recommended({ setFilteredProducts }: Params) {
             })
           }
           className={`${
-            selectedName === "BF sportswear" ? "border-2" : "border-0"
+            selectedName === "BF sportswear"
+              ? "button-selected"
+              : "button-not-selected"
           }`}
         >
           BF sportswear
@@ -76,7 +84,9 @@ export default function Recommended({ setFilteredProducts }: Params) {
             })
           }
           className={`${
-            selectedName === "LIBRA Sport" ? "border-2" : "border-0"
+            selectedName === "LIBRA Sport"
+              ? "button-selected"
+              : "button-not-selected"
           }`}
         >
           LIBRA Sport

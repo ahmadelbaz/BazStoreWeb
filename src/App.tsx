@@ -1,9 +1,12 @@
 import { useMemo, useState } from "react";
+// import { ThemeProvider } from "react-shadcn-ui";
 import Content from "./Content/Content";
 import Nav from "./Navigation/Nav";
 import Products from "./Products/Products";
 import Recommended from "./Recommended/Recommended";
 import Side from "./SideBar/Side";
+// import { ThemeProvider } from "./components/ThemeProvider";
+import { ThemeProvider } from "react-shadcn-ui";
 import data from "./db/db";
 
 export type FilterType = {
@@ -29,7 +32,7 @@ export default function App() {
     return products.filter((product) => {
       const searcFilter =
         filter.search === "" ||
-        product.title.toLowerCase().includes(filter.search);
+        product.title.toLowerCase().includes(filter.search.toLowerCase());
 
       const companyNameFilter =
         filter.companyName === "All" || product.company === filter.companyName;
@@ -60,17 +63,19 @@ export default function App() {
   }, [filter]);
 
   return (
-    <div className="flex flex-wrap min-h-full justify-center w-full">
-      <Side setFilteredProducts={setFilter} />
-      <Content
-        children={
-          <>
-            <Nav setFilteredProducts={setFilter} />
-            <Recommended setFilteredProducts={setFilter} />
-            <Products products={filteredProducts} />
-          </>
-        }
-      />
-    </div>
+    <ThemeProvider /* defaultTheme="dark" storageKey="vite-ui-theme" */>
+      <div className="flex flex-wrap min-h-full justify-center w-full">
+        <Side setFilteredProducts={setFilter} />
+        <Content
+          children={
+            <>
+              <Nav setFilteredProducts={setFilter} />
+              <Recommended setFilteredProducts={setFilter} />
+              <Products products={filteredProducts} />
+            </>
+          }
+        />
+      </div>
+    </ThemeProvider>
   );
 }

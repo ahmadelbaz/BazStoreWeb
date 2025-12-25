@@ -18,8 +18,9 @@ export default function Radio({
         value={value}
         checked={selectedOption === value}
         onChange={onChange}
+        className="hover:cursor-pointer"
       />
-      <span>{name}</span>
+      <span className="hover:cursor-pointer">{name}</span>
     </label>
   );
 }
