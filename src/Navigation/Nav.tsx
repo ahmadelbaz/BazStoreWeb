@@ -14,6 +14,7 @@ export default function Nav({ setFilteredProducts }: Params) {
     <nav className="flex justify-between mb-12 gap-2">
       <SearchBar setFilteredProducts={setFilteredProducts} />
       <section className="flex gap-3 items-center flex-col sm:flex-row">
+        {/* <Button variant="ghost">Dark</Button> */}
         <ThemeToggle />
         <GrFavorite size={20} />
         <CiShoppingCart size={30} />
