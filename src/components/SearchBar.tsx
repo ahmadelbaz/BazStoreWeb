@@ -11,7 +11,7 @@ export default function SearchBar({ setFilteredProducts }: Params) {
   return (
     <input
       type="text"
-      className="w-72 h-10 border-2 border-[#333] bg-[#333] rounded-2xl p-4  focus:outline-none focus:border-[#555]"
+      className="w-28 xs:w-72 h-10 border-2 border-[#333] bg-[#333] rounded-2xl p-4  focus:outline-none focus:border-[#555]"
       placeholder="Enter your search here..."
       onChange={onChange}
     />

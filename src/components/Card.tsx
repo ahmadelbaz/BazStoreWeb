@@ -9,6 +9,10 @@ interface NewProduct {
 export default function Card({ product }: NewProduct) {
   const ref = useRef<HTMLDivElement>(null);
 
+  const strangeData: [string, boolean] = ["Ahmad", Boolean(0)];
+
+  console.log(strangeData);
+
   const Star = product.star;
 
   useEffect(() => {
@@ -24,13 +28,12 @@ export default function Card({ product }: NewProduct) {
     }
   }, [product.title]);
   return (
-    <div className="flex flex-col border justify-center border-gray-500 w-75 p-8 gap-y-3 rounded-lg hover:scale-105 transition-all">
+    <div className="flex flex-col border justify-center border-gray-500 w-56 sm:w-75 p-8 gap-y-3 rounded-lg hover:scale-105 transition-all">
       <div>
         <img
           src={product.img}
           alt={product.title}
           width={200}
-          //   height={370}
           className="h-32 object-contain"
         />
       </div>

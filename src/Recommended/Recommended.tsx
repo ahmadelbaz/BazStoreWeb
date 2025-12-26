@@ -6,7 +6,7 @@ interface Params {
 }
 
 export default function Recommended({ setFilteredProducts }: Params) {
-  const [selectedName, setSelectedName] = useState<String>("");
+  const [selectedName, setSelectedName] = useState<string>("");
   return (
     <div className="mb-8">
       <h3 className="mb-4">Recommended</h3>

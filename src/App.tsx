@@ -1,8 +1,8 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 // import { ThemeProvider } from "react-shadcn-ui";
 import Content from "./Content/Content";
 import Nav from "./Navigation/Nav";
-import Products from "./Products/Products";
+import Products, { type ProductType } from "./Products/Products";
 import Recommended from "./Recommended/Recommended";
 import Side from "./SideBar/Side";
 // import { ThemeProvider } from "./components/ThemeProvider";
@@ -30,7 +30,7 @@ export default function App() {
     color: "All",
   });
 
-  const filteredProducts = useMemo(() => {
+  const filteredProducts = (): ProductType[] => {
     return products.filter((product) => {
       const searcFilter =
         filter.search === "" ||
@@ -62,7 +62,7 @@ export default function App() {
         colorFilter
       );
     });
-  }, [filter]);
+  };
 
   return (
     <ThemeProvider /* defaultTheme="dark" storageKey="vite-ui-theme" */>
@@ -73,7 +73,7 @@ export default function App() {
             <>
               <Nav setFilteredProducts={setFilter} />
               <Recommended setFilteredProducts={setFilter} />
-              <Products products={filteredProducts} />
+              <Products products={filteredProducts()} />
             </>
           }
         />
